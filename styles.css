@@ -1,0 +1,29 @@
+:root {
+    --main-bg-color: rgb(212, 212, 212);
+    --board-container-bg-color: rgba(0, 0, 0, 0.65);
+    --board-cell-bg-color: white;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#gameboard-container {
+    padding: 15px;
+    background-color: var(--board-container-bg-color);
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    border: 1px solid black;
+    width: 50vw;
+    height: 50vh;
+}
+
+.board-cell {
+    background-color: var(--board-cell-bg-color);
+    border: 1px solid black;
+    font-size: large;
+}
