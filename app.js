@@ -72,7 +72,6 @@ const gameControls = (() => {
     
 })();
 
-//                                  Gameplay
 //add board to the document
 gameboard.board.forEach((cell) => {
     newDiv = document.createElement('div');

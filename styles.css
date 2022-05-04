@@ -12,20 +12,20 @@ body {
 }
 
 #gameboard-container {
-    padding: 15px;
+    padding: 6px;
     background-color: var(--board-container-bg-color);
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(3,1fr);
     border: 1px solid black;
-    width: 50vw;
-    height: 50vh;
+    width: 40vw;
+    height: 40vh;
 }
 
 .board-cell {
     background-color: var(--board-cell-bg-color);
-    border: 1px solid black;
-    font-size: 7rem;
+    border: 3px solid var(--board-container-bg-color);
+    font-size: 5rem;
     display: flex;
     justify-content: center;
 }
