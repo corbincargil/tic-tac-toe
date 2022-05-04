@@ -35,8 +35,8 @@ const gameboard = (() => {
         let cellNumbers = [cellOne, cellTwo, cellThree];
         let i = 0;
         cellNumbers.forEach(cell => {
-            const cellContent = board[cell].textContent;
-            if (cellContent == symbol) {i++}
+            const cellContent = document.getElementById(cell).textContent;
+            if (cellContent === symbol) {i++}
         });
         if (i === 3) {
             console.log('Player 1 is the winner!');
@@ -45,7 +45,7 @@ const gameboard = (() => {
          symbol = 'o';
          i = 0;
          cellNumbers.forEach(cell => {
-            const cellContent = board[cell].textContent;
+            const cellContent = document.getElementById(cell).textContent;
             if (cellContent == symbol) {i++}
         });
         if (i === 3) {
@@ -53,7 +53,18 @@ const gameboard = (() => {
          } else {}
     }
 
-    return {board, updateBoard, checkForWinner}
+    const runAllChecks = () => {
+        checkForWinner(0,1,2);
+        checkForWinner(3,4,5);
+        checkForWinner(6,7,8);
+        checkForWinner(0,3,6);
+        checkForWinner(1,4,7);
+        checkForWinner(2,5,8);
+        checkForWinner(0,4,8);
+        checkForWinner(2,4,6);
+    }
+
+    return {board, updateBoard, runAllChecks}
 })();
 
 
@@ -72,7 +83,7 @@ gameboard.board.forEach((cell) => {
     newDiv.classList.add('board-cell');
     newDiv.setAttribute('id',`${gameboard.board[cell]}`);
     newDiv.addEventListener('click', gameboard.updateBoard);
-    newDiv.addEventListener('click',gameboard.checkForWinner(0,1,2))
+    newDiv.addEventListener('click',gameboard.runAllChecks)
     boardContainer.appendChild(newDiv);
     
 });
