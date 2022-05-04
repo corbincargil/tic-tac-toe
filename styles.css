@@ -11,15 +11,23 @@ body {
     align-items: center;
 }
 
+.main-container {
+    display: grid;
+    width: 90vw;
+    grid-template-columns: 20% 60% 20%;
+    gap: 10px;
+}
+/* Board styles */
 #gameboard-container {
     padding: 6px;
     background-color: var(--board-container-bg-color);
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(3,1fr);
+    justify-self: center;
     border: 1px solid black;
-    width: 40vw;
-    height: 40vh;
+    width: clamp(300px,40vw,500px);
+    height: 400px;
 }
 
 .board-cell {
@@ -28,4 +36,55 @@ body {
     font-size: 5rem;
     display: flex;
     justify-content: center;
+}
+
+/* Player styles */
+.player-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.player-picture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: max-content;
+    height: max-content;
+}
+#pic-one,
+#pic-two {
+    width: 100%;
+}
+h2.player-name {
+    font-size: 2rem;
+}
+
+/* Media queries */
+@media only screen and (max-width: 1000px){
+    #gameboard-container{
+        width: max(200px,40vw);
+        height: 50vh;
+    }
+    #pic-one,
+    #pic-two {
+        width: 75%;
+    }
+    h2.player-name {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 540px){
+    #gameboard-container{
+        width: max(100px,40vw);
+        min-width: 150px;
+        height: 200px;
+    }
+    #pic-one,
+    #pic-two {
+        width: 50%;
+    }
+    h2.player-name {
+        font-size: 1rem;
+    }
 }
