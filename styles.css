@@ -25,5 +25,7 @@ body {
 .board-cell {
     background-color: var(--board-cell-bg-color);
     border: 1px solid black;
-    font-size: large;
+    font-size: 7rem;
+    display: flex;
+    justify-content: center;
 }
