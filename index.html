@@ -7,24 +7,37 @@
     <title>Tic-tac-toe!</title>
     <script src="./app.js" defer></script>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,600;1,400&display=swap');
+    </style>
 </head>
 <body>
     <h1 id="main-heading">Tic-Tac-Toe</h1>
     <div id="main-container" class="main-container">
 
-        <div id="player-one-container" class="player-container">
-            <div class="player-picture"><img id="pic-one" src="./icons/batman.png" alt="profile picture"></div>
+        <div id="player-one-container" class="player-container your-turn">
+            <div id="pic-one-container" class="player-picture your-turn"><img id="pic-one" src="./icons/batman.png" alt="profile picture"></div>
             <h2 class="player-name">Player 1</h2>
+            <h2 class="win-status off">WINNER!</h2>
+            <p class="turn-status your-turn">YOUR TURN</p>
         </div>
 
         <div id="gameboard-container" class="gameboard-container player-1"></div>
 
         <div id="player-two-container" class="player-container">
-            <div class="player-picture"><img id="pic-two" src="./icons/spiderman.png" alt="profile picture"></div>
+            <div id="pic-two-container" class="player-picture not-your-turn"><img id="pic-two" src="./icons/spiderman.png" alt="profile picture"></div>
             <h2 class="player-name">Player 2</h2>
+            <h2 class="win-status off">WINNER!</h2>
+            <p class="turn-status not-your-turn">YOUR TURN</p>
         </div>
 
     </div>
-    <div id="controls-container" class="controls-container"></div>
+    <div id="controls-container" class="controls-container">
+        <a href="index.html"><button id="reset-btn">RESET</button></a>
+    </div>
+    <div class="footer"> 
+        <div>Created by Corbin Cargil <a href="https://github.com/corbincargil"><img src="./img/github-logo.png" alt="Corbin's Github"></a></div>
+        <div>As part of <a href="https://www.theodinproject.com/lessons/node-path-javascript-library" target="_blank"><strong>The Odin Project</strong></a> curriculum</div>
+    </div>
 </body>
 </html>
