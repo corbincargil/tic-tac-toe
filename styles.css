@@ -151,6 +151,23 @@ p.not-your-turn {
     color: green;
 }
 
+#reset-btn {
+    background-color: var(--board-container-bg-color);
+    color: var(--title-color);
+    width: 90px;
+    height: 45px;
+    font-size: 1rem;
+}
+
+#reset-btn:hover {
+    background-color: white;
+    color: black;
+}
+
+#reset-btn:active{
+    background-color: red;
+}
+
 /* Media queries */
 @media only screen and (max-width: 1000px){
     body{ 
