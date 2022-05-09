@@ -14,7 +14,8 @@ const resetButton = document.getElementById('reset-btn');
 
 //player object (factory function)
 const player = (name, number) => {
-    name; 
+    name;
+    number; 
     
     const toggleTurnStatus = (number) => {
         if (number == 1) {
